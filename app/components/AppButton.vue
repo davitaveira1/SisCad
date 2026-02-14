@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 
 interface Props {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'
   size?: 'sm' | 'md' | 'lg'
   disabled?: boolean
   loading?: boolean
@@ -36,6 +36,7 @@ const variantClasses = computed(() => {
     secondary: 'bg-background-card hover:bg-background-hover text-content border border-surface-border',
     outline:   'bg-transparent hover:bg-green-50 text-primary border border-primary',
     ghost:     'bg-transparent hover:bg-background-hover text-content',
+    danger:    'bg-error hover:bg-red-700 text-white shadow-md shadow-error/25',
   }
   return variants[props.variant]
 })
